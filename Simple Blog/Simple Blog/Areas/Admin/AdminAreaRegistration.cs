@@ -19,7 +19,7 @@ namespace Simple_Blog.Areas.Admin
                 "Admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
-            context.MapRoute("admin", "adim", new { Controller = "PoController", Action = "index" });
+            context.MapRoute("admin", "admin", new { Controller = "PostsController", Action = "index" });
         }
     }
 }

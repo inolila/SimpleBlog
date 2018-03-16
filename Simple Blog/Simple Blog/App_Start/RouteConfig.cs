@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Simple_Blog.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,9 +12,11 @@ namespace Simple_Blog
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            var namespaces = new[] { typeof(PostsController).Namespace };
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("Home", "", new { Controller = "Posts", Action = "Index" });
+            routes.MapRoute("Home", "", new { Controller = "Posts", Action = "Index" }, namespaces);
+            routes.MapRoute("LogIn", "LogIn", new { Controller = "Auth", Action = "login" }, namespaces);
         }
     }
 }
